@@ -1,0 +1,432 @@
+/* ============================================================
+   BENCHMARK SCHOOL SYSTEM - "Academic Prestige" Brand Identity
+   ============================================================ */
+
+/* Google Fonts Import - Merriweather (Headings) + Inter (Body) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS Custom Properties - Brand Colors
+   ============================================================ */
+:root {
+    /* Primary Brand Colors */
+    --school-blue: #111184;
+    /* Deep Blue - Navbar, Footer, Primary Headings */
+    --school-red: #9B111E;
+    /* Ruby Red - Buttons, Alerts, "School System" text */
+    --school-gold: #EFBF04;
+    /* Gold - Trophies, 5-star ratings, Position holders */
+    --school-cream: #FDFBD4;
+    /* Cream - Section backgrounds (alt to white) */
+    --school-green: #00674F;
+    /* Emerald Green - Success states, House colors */
+
+    /* Semantic Color Mappings */
+    --color-primary: var(--school-blue);
+    --color-secondary: var(--school-red);
+    --color-accent: var(--school-gold);
+    --color-success: var(--school-green);
+    --color-background-alt: var(--school-cream);
+
+    /* Text Colors */
+    --text-primary: #1f2937;
+    /* Dark Gray - Primary text */
+    --text-secondary: #4b5563;
+    /* Medium Gray - Secondary text */
+    --text-muted: #6b7280;
+    /* Light Gray - Muted/caption text */
+    --text-on-dark: #ffffff;
+    /* White - Text on dark backgrounds */
+
+    /* Border Colors */
+    --border-primary: #e5e7eb;
+    /* Light Gray - Primary borders */
+    --border-subtle: #f3f4f6;
+    /* Very Light Gray - Subtle borders */
+
+    /* Typography */
+    --font-heading: 'Merriweather', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* ============================================================
+       Relume UI Variable Mappings - Auto-updates existing components
+       ============================================================ */
+    --primary-color: var(--school-blue);
+    --secondary-color: var(--school-red);
+    --text-dark: var(--text-primary);
+    --text-light: var(--text-secondary);
+}
+
+/* ============================================================
+   Base Typography
+   ============================================================ */
+body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--school-blue);
+}
+
+/* ============================================================
+   Relume UI Class Overrides - Ensure brand consistency
+   Note: With Tailwind config overrides, we can reduce !important usage
+   ============================================================ */
+.bg-neutral-white {
+    background-color: var(--school-cream);
+}
+
+.border-border-primary {
+    border-color: var(--border-primary);
+}
+
+.text-text-primary {
+    color: var(--text-primary);
+}
+
+/* ============================================================
+   Brand Utility Classes
+   ============================================================ */
+
+/* Background Utilities */
+.bg-brand-blue {
+    background-color: var(--school-blue);
+}
+
+.bg-brand-red {
+    background-color: var(--school-red);
+}
+
+.bg-brand-gold {
+    background-color: var(--school-gold);
+}
+
+.bg-brand-cream {
+    background-color: var(--school-cream);
+}
+
+.bg-brand-green {
+    background-color: var(--school-green);
+}
+
+/* Text Color Utilities */
+.text-brand-blue {
+    color: var(--school-blue);
+}
+
+.text-brand-red {
+    color: var(--school-red);
+}
+
+.text-brand-gold {
+    color: var(--school-gold);
+}
+
+.text-brand-green {
+    color: var(--school-green);
+}
+
+/* ============================================================
+   Component Styles - Premium Academic Look
+   ============================================================ */
+
+/* Primary Action Buttons */
+.btn-primary {
+    background-color: var(--school-red);
+    color: white !important;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #7a0d18;
+    color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(155, 17, 30, 0.3);
+}
+
+/* Relume Primary Buttons - Ruby Red with White Text */
+button.bg-background-alternative,
+a.bg-background-alternative,
+[class*="bg-background-alternative"] {
+    background-color: var(--school-red) !important;
+    color: white !important;
+    border-color: var(--school-red) !important;
+    transition: all 0.2s ease;
+}
+
+button.bg-background-alternative:hover,
+a.bg-background-alternative:hover,
+[class*="bg-background-alternative"]:hover {
+    background-color: #7a0d18 !important;
+    color: white !important;
+    border-color: #7a0d18 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(155, 17, 30, 0.3);
+}
+
+/* Force white text on any Ruby Red background */
+.bg-school-red,
+[style*="background-color: rgb(155, 17, 30)"],
+[style*="background-color:#9B111E"] {
+    color: white !important;
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+    background-color: var(--school-blue);
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #0d0d6a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(17, 17, 132, 0.3);
+}
+
+/* Gold Highlight for Awards/Achievements */
+.highlight-gold {
+    color: var(--school-gold);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Success State */
+.state-success {
+    color: var(--school-green);
+}
+
+/* Cream Section Background */
+.section-cream {
+    background-color: var(--school-cream);
+}
+
+/* ============================================================
+   Relume UI Button Overrides - Secondary & Outline Variants
+   These target the Relume Button component's secondary variants
+   ============================================================ */
+
+/* Secondary Button - Outline style with Deep Blue */
+button[data-variant="secondary"],
+.relume-button-secondary,
+[class*="variant-secondary"] {
+    border-color: var(--school-blue) !important;
+    color: var(--school-blue) !important;
+    background-color: transparent !important;
+    transition: all 0.2s ease;
+}
+
+button[data-variant="secondary"]:hover,
+.relume-button-secondary:hover,
+[class*="variant-secondary"]:hover {
+    background-color: var(--school-blue) !important;
+    color: white !important;
+    border-color: var(--school-blue) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(17, 17, 132, 0.25);
+}
+
+/* Target Relume's border-border-primary buttons (outline style)
+   IMPORTANT: Exclude primary buttons (bg-background-alternative) to prevent blue text on red buttons */
+button.border-border-primary:not(.bg-background-alternative),
+a.border-border-primary:not(.bg-background-alternative) {
+    border-color: var(--school-blue) !important;
+    color: var(--school-blue) !important;
+    transition: all 0.2s ease;
+}
+
+button.border-border-primary:not(.bg-background-alternative):hover,
+a.border-border-primary:not(.bg-background-alternative):hover {
+    background-color: var(--school-blue) !important;
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+/* Link-style buttons - Deep Blue with underline effect */
+button[data-variant="link"],
+.relume-button-link,
+[class*="variant-link"] {
+    color: var(--school-blue) !important;
+    background: transparent !important;
+    border: none !important;
+    transition: all 0.2s ease;
+}
+
+button[data-variant="link"]:hover,
+.relume-button-link:hover,
+[class*="variant-link"]:hover {
+    color: #0d0d6a !important;
+    text-decoration: underline;
+}
+
+/* Override for any black text/border buttons to use Deep Blue */
+button.text-black,
+button.border-black,
+a.text-black,
+a.border-black {
+    color: var(--school-blue) !important;
+    border-color: var(--school-blue) !important;
+}
+
+button.text-black:hover,
+button.border-black:hover,
+a.text-black:hover,
+a.border-black:hover {
+    background-color: var(--school-blue) !important;
+    color: white !important;
+}
+
+/* Ensure bg-background-primary buttons (secondary style) use blue styling */
+button.bg-background-primary:not([class*="Enroll"]):not(.bg-background-alternative),
+a.bg-background-primary:not(.bg-background-alternative) {
+    border-color: var(--school-blue) !important;
+    color: var(--school-blue) !important;
+    transition: all 0.2s ease;
+}
+
+button.bg-background-primary:not([class*="Enroll"]):not(.bg-background-alternative):hover,
+a.bg-background-primary:not(.bg-background-alternative):hover {
+    background-color: var(--school-blue) !important;
+    border-color: var(--school-blue) !important;
+    color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(17, 17, 132, 0.25);
+}
+
+/* ============================================================
+   FINAL OVERRIDES - Maximum Specificity for Button Hover States
+   These MUST be at the end to override Tailwind hover utilities
+   ============================================================ */
+
+/* Override Tailwind's hover:bg-background-primary utility */
+button[class*="hover:bg-background-primary"]:not(.bg-background-alternative):hover,
+button.text-text-primary:not(.bg-background-alternative):hover {
+    background-color: var(--school-blue) !important;
+    color: white !important;
+}
+
+/* Ultra-specific: Secondary buttons with both border and bg classes */
+button.border-border-primary.bg-background-primary:not(.bg-background-alternative):hover {
+    background-color: #111184 !important;
+    border-color: #111184 !important;
+    color: #ffffff !important;
+}
+
+/* Ensure all text-text-alternative elements (on dark bg) stay white */
+.text-text-alternative,
+button .text-text-alternative,
+button.text-text-alternative {
+    color: white !important;
+}
+
+/* Final catch-all for secondary/outline buttons on hover */
+section button:not(.bg-background-alternative):not([class*="Enroll"]):hover {
+    background-color: var(--school-blue) !important;
+    color: white !important;
+}
+
+/* ============================================================
+   Announcement Bar - Force Ruby Red Background & White Text
+   Override any conflicting styles to ensure brand consistency
+   ============================================================ */
+#announcement-bar,
+section#announcement-bar,
+[id="announcement-bar"] {
+    background-color: #9B111E !important; /* Ruby Red - Direct color */
+    background: #9B111E !important; /* Force background */
+    color: #ffffff !important; /* White text */
+}
+
+#announcement-bar h1,
+#announcement-bar *,
+#announcement-bar div,
+#announcement-bar span {
+    color: #ffffff !important; /* Force white text on all children */
+}
+
+/* ============================================================
+   Accessibility Utilities
+   ============================================================ */
+
+/* Screen Reader Only - Hide visually but keep accessible to screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--school-blue);
+    outline-offset: 2px;
+}
+
+/* Skip link styling */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--school-blue);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    * {
+        border-color: currentColor !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
